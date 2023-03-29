@@ -1,0 +1,21 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 32px;
+}
+
+.navbar .icon-iphone {
+    display: flex;
+    column-gap: 3px;
+}
+
+.clock p {
+    font-weight: bold;
+    font-size: 14px;
+    color: #ffffff;
+}
