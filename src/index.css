@@ -5,8 +5,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: radial-gradient(231.16% 60.04% at 249.64% -17.13%, rgba(12, 10, 48, 0.99) 0%, rgba(184, 180, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, radial-gradient(358.33% 76.51% at -205.68% 139.23%, rgba(11, 9, 46, 0.55) 0%, rgba(184, 180, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #070628;
-  border-radius: 40px;
+  background: rgb(7,6,40);
+  background: linear-gradient(90deg, rgba(7,6,40,1) 0%, rgba(17,14,78,1) 50%, rgba(23,5,75,1) 100%);
   color: #ffffff;
 }
 
