@@ -44,6 +44,7 @@ const Navbar = () => {
                 </svg>
 
             </div>
+
         </div>
     );
 };
