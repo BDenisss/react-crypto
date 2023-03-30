@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
+import Balance from "./components/Balance";
 import "./index.css";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
         <div className="App">
             <Navbar />
             <Header />
+            <Balance />
         </div>
     );
 }
