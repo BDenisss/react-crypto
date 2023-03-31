@@ -28,13 +28,15 @@
 .coin__card {
     display: flex;
     align-items: center;
+    justify-content: center;
     row-gap: 8px;
     column-gap: 100px;
-    width: fit-content;
+    width: 1200px;
     padding: 16px;
     border-radius: 8px;
     background: #1E1E1E;
     box-shadow: #FFFFFF 0 0 4px 1px;
+    margin: 12px 0;
 }
 
 img {
