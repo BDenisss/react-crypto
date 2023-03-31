@@ -8,10 +8,33 @@
 
 .uppercase {
     text-transform: uppercase;
+    margin: 0;
 }
 
 .coin {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    column-gap: 16px;
+}
+
+.market {
+    display: flex;
+    align-items: center;
+    column-gap: 100px;
+}
+
+.coin__card {
+    display: flex;
+    align-items: center;
+    row-gap: 8px;
+    column-gap: 100px;
+    width: fit-content;
+    padding: 16px;
+    border-radius: 8px;
+    background: #1E1E1E;
+    box-shadow: #FFFFFF 0 0 4px 1px;
 }
 
 img {
@@ -38,3 +61,11 @@ h1 {
 
     color: #FFFFFF;
 }
+
+
+.error {
+    color: red;
+    font-weight: bold;
+    padding: 10px;
+}
+
