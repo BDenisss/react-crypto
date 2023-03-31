@@ -20,7 +20,7 @@ const Coin = () => {
             .then((response) => {
                 setData(response.data);
                 return axios.get(
-                    `https://api.coingecko.com/api/v3/coins/${response.data[0].id}/market_chart?vs_currency=eur&days=1&interval=hourly`
+                    `https://api.coingecko.com/api/v3/coins/${response.data[0].id}/market_chart?vs_currency=eur&days=0.5&interval=hourly`
                 );
             })
             .then((response) => {
@@ -82,10 +82,10 @@ const Coin = () => {
                     </div>
                 </div>
                 <div className="chart">
-                    <PriceChart data={priceData} />
+                    <PriceChart data={priceData} change24h={data[0].price_change_percentage_24h} />
                 </div>
                 <div className="market__capitalization">
-                    <p>Market Capitalization</p>
+                    <p>{data[0].market_cap.toLocaleString()} €</p>
                 </div>
             </div>
             {error && <div className="error">{error}</div>}

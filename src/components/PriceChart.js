@@ -1,11 +1,15 @@
 import React, { useEffect, useRef } from 'react';
-import { Chart, LineController, LinearScale, PointElement, LineElement } from 'chart.js';
+import { Chart, LineController, LinearScale, CategoryScale, PointElement, LineElement } from 'chart.js';
 
-// Enregistrer les éléments nécessaires
-Chart.register(LineController, LinearScale, PointElement, LineElement);
+// Register the necessary elements
+Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineElement);
 
-const PriceChart = ({ data }) => {
+const PriceChart = (props) => {
     const chartRef = useRef(null);
+
+    const { data, change24h } = props;
+
+    const chartColor = change24h >= 0 ? 'green' : 'red';
 
     useEffect(() => {
         if (chartRef && chartRef.current) {
@@ -16,8 +20,9 @@ const PriceChart = ({ data }) => {
                     datasets: [
                         {
                             data,
-                            borderColor: '#2196f3',
-                            borderWidth: 1,
+                            borderColor: chartColor,
+                            borderWidth: 2.5,
+                            borderRadius: 100,
                             fill: false,
                             tension: 0.1,
                         },
@@ -57,7 +62,7 @@ const PriceChart = ({ data }) => {
     }, [data]);
 
     return (
-        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+        <div style={{ position: 'relative', width: '100px', height: '100px' }}>
             <canvas ref={chartRef}></canvas>
         </div>
     );
