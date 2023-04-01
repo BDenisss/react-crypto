@@ -20,24 +20,29 @@
 }
 
 .market {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(100px, 1fr));
     align-items: center;
-    column-gap: 100px;
+    place-items: center;
+    width: 1100px;
+    padding: 4px;
 }
 
 .coin__card {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(100px, 1fr));
     align-items: center;
-    justify-content: center;
-    row-gap: 8px;
-    column-gap: 100px;
-    width: 1200px;
+    place-items: center;
+    width: 1100px;
     padding: 16px;
     border-radius: 8px;
     background: #1E1E1E;
     box-shadow: #FFFFFF 0 0 4px 1px;
     margin: 12px 0;
 }
+
+
+
 
 img {
     width: 48px;
@@ -71,3 +76,25 @@ h1 {
     padding: 10px;
 }
 
+
+@media (max-width: 768px) {
+    .coin__card {
+        grid-template-columns: repeat(6, minmax(50px, 1fr));
+        width: fit-content;
+        margin: 12px;
+        font-size: 12px;
+    }
+    .market {
+        grid-template-columns: repeat(6, minmax(50px, 1fr));
+        width: fit-content;
+        margin: 12px;
+        font-size: 12px;
+    }
+    img {
+        width: 32px;
+        height: 32px;
+    }
+    h1 {
+       font-size: 12px;
+    }
+}
