@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Chart, LineController, LinearScale, CategoryScale, PointElement, LineElement } from 'chart.js';
+import './PriceChart.css';
 
 // Register the necessary elements
 Chart.register(LineController, LinearScale, CategoryScale, PointElement, LineElement);
@@ -62,7 +63,7 @@ const PriceChart = (props) => {
     }, [data]);
 
     return (
-        <div style={{ position: 'relative', width: '100px', height: '100px' }}>
+        <div className="chart__container" style={{ position: 'relative', width: '100px', height: '100px' }}>
             <canvas ref={chartRef}></canvas>
         </div>
     );
