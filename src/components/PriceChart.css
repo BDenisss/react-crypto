@@ -4,3 +4,10 @@
         height: 50px !important;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .chart__container {
+        width: 40px !important;
+        height: 40px !important;
+    }
+}
