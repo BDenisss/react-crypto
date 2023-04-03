@@ -1,4 +1,5 @@
 import React from 'react';
+import './Pagination.css';
 
 const Pagination = ({ currentPage, totalPages, handlePageChange }) => {
     const pages = [];
@@ -7,9 +8,9 @@ const Pagination = ({ currentPage, totalPages, handlePageChange }) => {
     }
 
     return (
-        <div>
+        <div className="pagination__container">
             {pages.map((page) => (
-                <button
+                <button className="pagination"
                     key={page}
                     onClick={() => handlePageChange(page)}
                     style={currentPage === page ? { fontWeight: 'bold' } : null}

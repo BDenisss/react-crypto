@@ -90,7 +90,9 @@ h1 {
 @media (max-width: 768px) {
     .coin__card {
         grid-template-columns: repeat(6, minmax(50px, 1fr));
-        width: fit-content;
+        place-content: center;
+        place-self: center;
+        width: 80%;
         margin: 12px;
         font-size: 12px;
     }
@@ -106,6 +108,11 @@ h1 {
     }
     h1 {
         font-size: 12px;
+    }
+    .list__container__coins {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }
 

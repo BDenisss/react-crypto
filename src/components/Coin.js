@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Coin.css';
 import CryptoCard from './CryptoCard';
+import Pagination from './Pagination';
 
 const Coin = () => {
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
 
     const url =
-        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=10&page=1&sparkline=false&locale=en';
+        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en';
 
     useEffect(() => {
         axios
@@ -47,17 +48,36 @@ const Coin = () => {
                 <p>Chart</p>
                 <p>Market Capitalization</p>
             </div>
-            <CryptoCard coinData={data[0]} />
-            <CryptoCard coinData={data[1]} />
-            <CryptoCard coinData={data[2]} />
-            <CryptoCard coinData={data[3]} />
-            <CryptoCard coinData={data[4]} />
-            <CryptoCard coinData={data[5]} />
-            <CryptoCard coinData={data[6]} />
-            <CryptoCard coinData={data[7]} />
-            <CryptoCard coinData={data[8]} />
-            <CryptoCard coinData={data[9]} />
+            <CryptoList coins={data} />
             {error && <div className="error">{error}</div>}
+        </div>
+    );
+};
+
+const CryptoList = ({ coins }) => {
+    const [currentPage, setCurrentPage] = useState(1);
+    const [coinsPerPage] = useState(10);
+
+    const indexOfLastCoin = currentPage * coinsPerPage;
+    const indexOfFirstCoin = indexOfLastCoin - coinsPerPage;
+    const currentCoins = coins.slice(indexOfFirstCoin, indexOfLastCoin);
+
+    const totalPages = Math.ceil(coins.length / coinsPerPage);
+
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
+    return (
+        <div className="list__container__coins">
+            {currentCoins.map((coin) => (
+                <CryptoCard key={coin.id} coinData={coin} />
+            ))}
+            <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                handlePageChange={handlePageChange}
+            />
         </div>
     );
 };
