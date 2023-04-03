@@ -5,17 +5,11 @@ const Header = () => {
 
 
 
- return (
+    return (
         <div className="header">
-            <div className="left">
-                <h2>Good Morning</h2>
-                <h1>Rabah</h1>
-            </div>
-            <div className="profile">
-                <img src="assets/profile.png" alt="profile"/>
-            </div>
+            <h1 className="title">Crypto tracker</h1>
         </div>
- );
+    );
 
 };
 

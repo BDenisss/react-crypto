@@ -1,16 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans&display=swap');
+
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin: 0 18px;
-}
-
-.left {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    column-gap: 10px;
+    justify-content: center;
+    margin: 0 0 24px 0;
 }
 
 h2 {
@@ -23,10 +17,10 @@ h2 {
     margin: 0;
 }
 
-h1 {
-    font-family: 'Epilogue', sans-serif;
+.title {
+    font-family: 'Bebas Neue', cursive;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 28px;
     line-height: 29px;
     margin: 0;
